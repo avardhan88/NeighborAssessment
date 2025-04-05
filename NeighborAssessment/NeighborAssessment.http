@@ -1,0 +1,6 @@
+@NeighborAssessment_HostAddress = http://localhost:5139
+
+GET {{NeighborAssessment_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
