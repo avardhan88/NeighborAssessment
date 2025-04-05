@@ -10,7 +10,8 @@ namespace NeighborAssessment.Services
         public ListingSearchService()
         {
             var json = File.ReadAllText("listings.json");
-            _listings = JsonSerializer.Deserialize<List<Listing>>(json) ?? new();
+            //var json = File.ReadAllText("test_listings.json");
+            _listings = JsonSerializer.Deserialize<List<Listing>>(json) ?? new();           
         }
 
         public List<SearchResult> Search(List<VehicleRequest> requests)
@@ -20,7 +21,8 @@ namespace NeighborAssessment.Services
 
             foreach (var locationGroup in groupedByLocation)
             {
-                var combinations = GetCheapestCombination(locationGroup.ToList(), requests);
+                var locationListings = locationGroup.ToList();
+                var combinations = GetCheapestCombination(locationListings, requests);
                 if (combinations != null)
                     results.Add(combinations);
             }

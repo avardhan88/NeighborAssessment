@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NeighborAssessment.Models;
+using NeighborAssessment.Services;
 
 namespace NeighborAssessment.Controllers
 {
